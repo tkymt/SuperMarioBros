@@ -4,6 +4,7 @@
 #define WIN_POS_Y 0
 
 #include "DxLib.h"
+#include "Sub.h"
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	ChangeWindowMode(TRUE);
@@ -17,6 +18,10 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	SetGraphMode(WIN_MAX_X, WIN_MAX_Y, 32);
 	SetBackgroundColor(255, 255, 255);
 	SetDrawScreen(DX_SCREEN_BACK);
+
+	Col.Read();
+	Fon.Read();
+	Key.Read();
 
 	DrawPixel(320, 240, GetColor(255, 255, 255));
 	WaitKey();
