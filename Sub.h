@@ -23,6 +23,7 @@ public:
 
 // •¶š‚ÌƒtƒHƒ“ƒg‚ğæ“¾‚·‚éŠÖ”ŒQ
 class {
+public:
 	int c[50 + 1];
 	void Read() {
 		for (int i = 0; i < 50 + 1; i++) {
