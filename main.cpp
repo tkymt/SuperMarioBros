@@ -5,6 +5,7 @@
 
 #include "DxLib.h"
 #include "Sub.h"
+#include "Pic.h"
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	ChangeWindowMode(TRUE);
@@ -21,6 +22,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 
 	Col.Read();
 	Fon.Read();
+	Pic.Read();
 	Key.Read();
 
 	DrawPixel(320, 240, GetColor(255, 255, 255));
