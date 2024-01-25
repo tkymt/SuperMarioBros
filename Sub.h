@@ -37,7 +37,7 @@ public:
 	// Key‚Ì‰Ÿ‰ºŠÔî•ñ
 	int Key[256];
 	// KeyŠÖ”
-	void Read() {
+	int Read() {
 		char allKey[256];
 		GetHitKeyStateAll(allKey);
 		for (int i = 0; i < 256; i++) {
@@ -48,6 +48,7 @@ public:
 				Key[i] = 0;
 			}
 		}
+		return 0;
 	}
 }Key;
 

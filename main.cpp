@@ -3,6 +3,15 @@
 #define WIN_POS_X 0
 #define WIN_POS_Y 0
 
+// Title scene switching
+enum MEN {
+	MEN_00_Title,
+	MEN_01_Action
+};
+
+// Scene initial value substitution
+int Sce = MEN::MEN_00_Title;
+
 #include "DxLib.h"
 #include "Sub.h"
 #include "Pic.h"
@@ -23,7 +32,21 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	Col.Read();
 	Fon.Read();
 	Pic.Read();
-	Key.Read();
+
+	while (ScreenFlip == 0 &&
+		ClearDrawScreen() == 0 &&
+		ProcessMessage() == 0 &&
+		Key.Read() == 0 &&
+		Key.Key[KEY_INPUT_ESCAPE]) {
+		switch (Sce) {
+			case MEN::MEN_00_Title
+				Tit.Out();
+				break;
+			case:MEN::MEN_01_Action
+				Bat.Out();
+				break;
+		}
+	}
 
 	DrawPixel(320, 240, GetColor(255, 255, 255));
 	WaitKey();
