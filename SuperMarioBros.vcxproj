@@ -144,6 +144,7 @@
   <ItemGroup>
     <ClInclude Include="Pic.h" />
     <ClInclude Include="Sub.h" />
+    <ClInclude Include="Tit.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
