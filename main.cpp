@@ -38,7 +38,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		ClearDrawScreen() == 0 &&
 		ProcessMessage() == 0 &&
 		Key.Read() == 0 &&
-		Key.Key[KEY_INPUT_ESCAPE]) {
+		Key.Key[KEY_INPUT_ESCAPE] == 0) {
 		switch (Sce) {
 		case MEN::MEN_00_Title:
 				Tit.Out();
@@ -49,8 +49,6 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 		}
 	}
 
-	DrawPixel(320, 240, GetColor(255, 255, 255));
-	WaitKey();
 	DxLib_End();
 	return EXIT_SUCCESS;
 }
