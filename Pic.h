@@ -21,7 +21,7 @@ public:
 		Bl3 = LoadGraph(_T("Images/Floor.bmp"));
 		Bl4 = LoadGraph(_T("Images/Question_Block.bmp"));
 		Ene = LoadGraph(_T("Images/Enemy_Goomba.bmp"));
-		Mar = LoadGraph(_T("Images/Title.bmp"));
+		Mar = LoadGraph(_T("Images/Mario_Stand.bmp"));
 	}
 }Pic;
 
