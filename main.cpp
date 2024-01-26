@@ -15,6 +15,7 @@ int Sce = MEN::MEN_00_Title;
 #include "DxLib.h"
 #include "Sub.h"
 #include "Pic.h"
+#include "Tit.h"
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	ChangeWindowMode(TRUE);
@@ -33,17 +34,17 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	Fon.Read();
 	Pic.Read();
 
-	while (ScreenFlip == 0 &&
+	while (ScreenFlip() == 0 &&
 		ClearDrawScreen() == 0 &&
 		ProcessMessage() == 0 &&
 		Key.Read() == 0 &&
 		Key.Key[KEY_INPUT_ESCAPE]) {
 		switch (Sce) {
-			case MEN::MEN_00_Title
+		case MEN::MEN_00_Title:
 				Tit.Out();
 				break;
-			case:MEN::MEN_01_Action
-				Bat.Out();
+		case MEN::MEN_01_Action:
+				//Bat.Out();
 				break;
 		}
 	}
