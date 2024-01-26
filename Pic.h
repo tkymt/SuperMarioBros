@@ -1,6 +1,7 @@
 #pragma once
 
 #include "DxLib.h"
+#include "tchar.h"
 
 class {
 public:
