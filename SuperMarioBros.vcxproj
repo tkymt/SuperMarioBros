@@ -143,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Pic.h" />
+    <ClInclude Include="Sta.h" />
     <ClInclude Include="Sub.h" />
     <ClInclude Include="Tit.h" />
   </ItemGroup>

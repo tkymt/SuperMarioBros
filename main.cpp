@@ -3,6 +3,12 @@
 #define WIN_POS_X 0
 #define WIN_POS_Y 0
 
+#define POS_MAX_X 6600
+#define POS_MAX_Y 4500
+#define CELL 16
+#define STAGE_MAX_X 6600/16
+#define STAGE_MAX_Y 400/16
+
 // Title scene switching
 enum MEN {
 	MEN_00_Title,
@@ -16,6 +22,7 @@ int Sce = MEN::MEN_00_Title;
 #include "Sub.h"
 #include "Pic.h"
 #include "Tit.h"
+#include "Sta.h"
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	ChangeWindowMode(TRUE);
@@ -33,6 +40,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 	Col.Read();
 	Fon.Read();
 	Pic.Read();
+	Sta.Read();
 
 	while (ScreenFlip() == 0 &&
 		ClearDrawScreen() == 0 &&
@@ -44,7 +52,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 				Tit.Out();
 				break;
 		case MEN::MEN_01_Action:
-				//Bat.Out();
+				Sta.Out();
 				break;
 		}
 	}
