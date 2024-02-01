@@ -15,14 +15,14 @@ public:
 	int Mar;
 
 	void Read() {
-		Tit = LoadGraph(_T("Images/Title.bmp"));
-		Bac = LoadGraph(_T("Images/Sky.bmp"));
-		Bl1 = LoadGraph(_T("Images/Brick.bmp"));
-		Bl2 = LoadGraph(_T("Images/Empty_block.bmp"));
-		Bl3 = LoadGraph(_T("Images/Floor.bmp"));
-		Bl4 = LoadGraph(_T("Images/Question_Block.bmp"));
-		Ene = LoadGraph(_T("Images/Enemy_Goomba.bmp"));
-		Mar = LoadGraph(_T("Images/Mario_Stand.bmp"));
+		Tit = LoadGraph(_T("Images/x2/Title.bmp"));
+		Bac = LoadGraph(_T("Images/x2/Sky.bmp"));
+		Bl1 = LoadGraph(_T("Images/x2/Brick.bmp"));
+		Bl2 = LoadGraph(_T("Images/x2/Empty_block.bmp"));
+		Bl3 = LoadGraph(_T("Images/x2/Floor.bmp"));
+		Bl4 = LoadGraph(_T("Images/x2/Question_Block.bmp"));
+		Ene = LoadGraph(_T("Images/x2/Enemy_Goomba.bmp"));
+		Mar = LoadGraph(_T("Images/x2/Mario_Stand.bmp"));
 	}
 }Pic;
 
