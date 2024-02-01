@@ -1,13 +1,13 @@
-#define WIN_MAX_X 660
-#define WIN_MAX_Y 450
+#define WIN_MAX_X 512
+#define WIN_MAX_Y 512
 #define WIN_POS_X 0
 #define WIN_POS_Y 0
 
-#define POS_MAX_X 6600
-#define POS_MAX_Y 4500
-#define CELL 16
-#define STAGE_MAX_X 6600/16
-#define STAGE_MAX_Y 400/16
+#define POS_MAX_X 512 * 10
+#define POS_MAX_Y 512
+#define CELL 32
+#define STAGE_MAX_X 512/32
+#define STAGE_MAX_Y 512/32
 
 // Title scene switching
 enum MEN {
