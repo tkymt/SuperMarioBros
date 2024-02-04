@@ -3,11 +3,11 @@
 #define WIN_POS_X 0
 #define WIN_POS_Y 0
 
-#define POS_MAX_X 512 * 10
-#define POS_MAX_Y 512
+#define POS_MAX_X WIN_MAX_X * 10
+#define POS_MAX_Y WIN_MAX_Y
 #define CELL 32
-#define STAGE_MAX_X 512/32
-#define STAGE_MAX_Y 512/32
+#define STAGE_MAX_X POS_MAX_X / CELL
+#define STAGE_MAX_Y POS_MAX_Y / CELL
 
 // Title scene switching
 enum MEN {
@@ -23,6 +23,7 @@ int Sce = MEN::MEN_00_Title;
 #include "Pic.h"
 #include "Tit.h"
 #include "Sta.h"
+#include "Act.h"
 
 int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow) {
 	ChangeWindowMode(TRUE);
@@ -52,7 +53,7 @@ int WINAPI _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLi
 				Tit.Out();
 				break;
 		case MEN::MEN_01_Action:
-				Sta.Out();
+			Act.Out();
 				break;
 		}
 	}

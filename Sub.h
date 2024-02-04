@@ -44,7 +44,7 @@ public:
 			if (allKey[i] == 1) {
 				Key[i] = Key[i] + 1;
 			}
-			else if (allKey[i] = 0) {
+			else if (allKey[i] == 0) {
 				Key[i] = 0;
 			}
 		}

@@ -33,7 +33,7 @@ public:
 		fclose(fp_stage_1_1);
 	}
 
-	void Out() {
+	void Out(int* PosX) {
 		int pic = 0;
 		// Block‚Ì•`‰æ
 		for (int y = 0; y < STAGE_MAX_Y; y++) {
@@ -58,7 +58,7 @@ public:
 					pic = Pic.Ene;
 					break;
 				}
-				DrawGraph(CELL * x, CELL * y, pic, TRUE);
+				DrawGraph(CELL * x + *PosX, CELL * y, pic, TRUE);
 			}
 		}
 	}

@@ -142,6 +142,7 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Act.h" />
     <ClInclude Include="Pic.h" />
     <ClInclude Include="Sta.h" />
     <ClInclude Include="Sub.h" />
