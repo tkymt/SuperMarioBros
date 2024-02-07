@@ -2,6 +2,7 @@
 
 #include "Sta.h"
 #include "Pic.h"
+#include <math.h>
 
 class ACTION {
 public:
@@ -38,6 +39,10 @@ private:
 		bool Rev = 0;
 	}Fla;
 
+	int Cou = 0;
+	double T = 0;
+	double T_K = 10.0;
+
 	void Cal();
 	void Cha();
 };
@@ -69,6 +74,38 @@ void ACTION::Cal() {
 		}
 		if (Mar.Pos.X == WIN_MAX_X / 2) {
 			_Sta.Pos.X = _Sta.Pos.X + Mov.X;
+		}
+	}
+
+	// ƒWƒƒƒ“ƒv
+	if (Fla.Rev == 0 && Fla.Jum == 1) {
+		Cou = Cou + 1;
+		T = T_K * ((double)Cou / 60);
+		Mov.Y = (int)(pow(T, 2.0));
+		for (int y = 1; y <= Mov.Y; y++) {
+			Mar.Pos.Y--;
+			if (Mov.Y_MAX == Mar.Pos.Yin - Mar.Pos.Y) {
+				Fla.Rev = 1;
+				Cou = 0;
+				break;
+			}
+		}
+	}
+	else if (Fla.Rev == 1 && Fla.Jum == 1) {
+		Cou++;
+		T = T_K * ((double)Cou / 60);
+		Mov.Y = (int)(pow(T, 2.0));
+		for (int y = 0; y <= Mov.Y; y++) {
+			Mar.Pos.Y++;
+			if (Mar.Pos.Y == POS_MAX_Y - 3 * CELL) {
+				Mar.Pos.Y = POS_MAX_Y - 3 * CELL;
+				Mar.Pos.Yin = POS_MAX_Y - 3 * CELL;
+				Fla.Jum = 0;
+				Fla.Rev = 0;
+				Mov.Y = 0;
+				Cou = 0;
+				break;
+			}
 		}
 	}
 }
