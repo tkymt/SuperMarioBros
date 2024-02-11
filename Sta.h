@@ -15,6 +15,10 @@ public:
 		errno_t error;
 		error = fopen_s(&fp_stage_1_1, "Stage/1_1.txt", "r");
 
+		std::FILE* fp_block_exp;
+		errno_t error_block_exp;
+		fopen_s(&fp_block_exp, "Stage/block_exp.txt", "w");
+
 		if (error != 0) return;
 		// int i = 0;
 		for (int y = 0; y < STAGE_MAX_Y; y++) {
@@ -30,7 +34,24 @@ public:
 				*/
 			}
 		}
+
+		for (int y = 0; y < STAGE_MAX_Y; y++) {
+			for (int x = 0; x < STAGE_MAX_X; x++) {
+				int ins = Blo.Type[x][y];
+				std::fprintf(fp_block_exp, "(%d,%d)\n",x,y);
+				for (int ye = 0; ye < CELL; ye++) {
+					for (int xe = 0; xe < CELL; xe++) {
+						Blo.Type_Exp[x + CELL + xe][y + CELL + ye] = ins;
+						std::fprintf(fp_block_exp, "%d ", Blo.Type_Exp[x * CELL + xe][y * CELL + xe]);
+					}
+					std::fprintf(fp_block_exp, "\n");
+				}
+				
+			}
+		}
+
 		fclose(fp_stage_1_1);
+		std::fclose(fp_block_exp);
 	}
 
 	void Out(int* PosX) {
