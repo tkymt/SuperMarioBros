@@ -41,7 +41,7 @@ public:
 				std::fprintf(fp_block_exp, "(%d,%d)\n",x,y);
 				for (int ye = 0; ye < CELL; ye++) {
 					for (int xe = 0; xe < CELL; xe++) {
-						Blo.Type_Exp[x + CELL + xe][y + CELL + ye] = ins;
+						Blo.Type_Exp[x * CELL + xe][y * CELL + ye] = ins;
 						std::fprintf(fp_block_exp, "%d ", Blo.Type_Exp[x * CELL + xe][y * CELL + xe]);
 					}
 					std::fprintf(fp_block_exp, "\n");
